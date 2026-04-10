@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router';
-import { WishlistContext } from '../../Contexts/WishlistContext';
+import { WishlistContext } from '../../Contexts/contexts';
 import { toast } from 'react-toastify';
 
 const WishlistBooks = ({ book }) => {

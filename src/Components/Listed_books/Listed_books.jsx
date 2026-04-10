@@ -5,8 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BookContext } from '../../Contexts/BookContext';
-import { WishlistContext } from '../../Contexts/WishlistContext';
+import { BookContext, WishlistContext } from '../../Contexts/contexts';
 import ReadBook from './ReadBook';
 import WishlistBooks from './WishlistBooks';
 

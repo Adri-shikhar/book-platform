@@ -1,16 +1,63 @@
-# React + Vite
+#Live Link - 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Book Vibe — Book Platform
 
-Currently, two official plugins are available:
+A small React app for browsing books, viewing details, marking books as read, and managing a wishlist.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Description
 
-## React Compiler
+Book Vibe is a demo book-platform built with modern React tooling. It loads sample book data from `public/booksData.json`, shows a list of books, provides a detail page for each book, lets users mark books as read and add/remove books from a wishlist. Read and wishlist data are persisted in `localStorage` so state survives page reloads.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Browse all books and view details
+- Mark books as "Read" (persisted)
+- Add and remove books from a wishlist (persisted)
+- Tabs view for Read vs Wishlist on the Listed Books page
+- Toast notifications for actions (add/remove)
+- Responsive UI using Tailwind CSS and DaisyUI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+
+- React 19
+- Vite
+- Tailwind CSS
+- DaisyUI
+- react-router (v7)
+- react-toastify
+- react-tabs
+- Node.js & npm
+
+## Project Structure (high level)
+
+- `public/` — static assets, `booksData.json`
+- `src/components/` — UI components (Home, Book, Listed_books, etc.)
+- `src/contexts/` — context providers (`BookContext.jsx`, `WishlistContext.jsx`, `contexts.js`)
+- `src/main.jsx` — app entry and router
+
+## Getting Started
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the dev server:
+
+```bash
+npm run dev
+```
+
+3. Build for production:
+
+```bash
+npm run build
+```
+
+Notes:
+- If you run into PowerShell permission issues on Windows, use `npm.cmd` instead of `npm`.
+
+---
+
+

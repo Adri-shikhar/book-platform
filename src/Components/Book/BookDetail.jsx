@@ -1,8 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
 import { useContext } from 'react';
-import { BookContext } from '../../Contexts/BookContext';
-import { WishlistContext } from '../../Contexts/WishlistContext';
+import { BookContext, WishlistContext } from '../../Contexts/contexts';
 
 const BookDetail = () => {
     const book = useLoaderData();

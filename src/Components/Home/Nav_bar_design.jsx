@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
 const Nav_bar_design = () => {
     return (
@@ -10,9 +10,9 @@ const Nav_bar_design = () => {
                 </div>
 
                 <div className="hidden md:flex items-center gap-6">
-                    <Link to="/" className="btn btn-outline btn-sm btn-success">Home</Link>
-                    <Link to="/listed-books" className="text-sm text-gray-600 hover:text-black">Listed Books</Link>
-                    <Link to="/pages-to-reload" className="text-sm text-gray-600 hover:text-black">Pages To Read</Link>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'btn btn-outline btn-sm btn-success' : 'text-sm text-gray-600 hover:text-black'}>Home</NavLink>
+                    <NavLink to="/listed-books" className={({ isActive }) => isActive ? 'btn btn-outline btn-sm btn-success' : 'text-sm text-gray-600 hover:text-black'}>Listed Books</NavLink>
+                    <NavLink to="/pages-to-reload" className={({ isActive }) => isActive ? 'btn btn-outline btn-sm btn-success' : 'text-sm text-gray-600 hover:text-black'}>Pages To Read</NavLink>
                 </div>
 
                 <div className="flex items-center gap-2">

@@ -1,7 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-
-export const WishlistContext = createContext();
+import { WishlistContext } from './contexts';
 
 const WishlistProvider = ({ children }) => {
     const [wishlist, setWishlist] = useState(() => {
@@ -18,9 +17,7 @@ const WishlistProvider = ({ children }) => {
             toast.error('This book is already in your wishlist.');
             return;
         }
-        else
-
-{
+        else {
             setWishlist((prev) => [...prev, book]);
             toast.success('Book added to wishlist');
         }
