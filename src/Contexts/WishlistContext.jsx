@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 export const WishlistContext = createContext();
 
@@ -14,10 +15,15 @@ const WishlistProvider = ({ children }) => {
 
     const addToWishlist = (book) => {
         if (wishlist.some((b) => b.bookId === book.bookId)) {
-            alert('This book is already in your wishlist.');
+            toast.error('This book is already in your wishlist.');
             return;
         }
-        setWishlist((prev) => [...prev, book]);
+        else
+
+{
+            setWishlist((prev) => [...prev, book]);
+            toast.success('Book added to wishlist');
+        }
     };
 
     const removeFromWishlist = (bookId) => {

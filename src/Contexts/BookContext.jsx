@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 export const BookContext = createContext();
 
@@ -14,10 +15,13 @@ const BookProvider = ({ children }) => {
 
     const handleRead = (book) => {
         if (readBooks.some((e) => e.bookId === book.bookId)) {
-            alert('You have already marked this book as read.');
+            toast.error('You have already marked this book as read.');
             return;
-        }
-        setReadBooks((prev) => [...prev, book]);
+        }else
+        {
+            
+            setReadBooks((prev) => [...prev, book]);
+        toast.success('Book added to read list');}
     };
 
     return (

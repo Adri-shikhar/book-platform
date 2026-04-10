@@ -11,6 +11,7 @@ import All_books from './Components/Book/All_books.jsx';
 import BookDetail from './Components/Book/BookDetail.jsx';
 import BookProvider from './Contexts/BookContext.jsx';
 import WishlistProvider from './Contexts/WishlistContext.jsx';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,7 @@ createRoot(document.getElementById('root')).render(
     <WishlistProvider>
       <BookProvider>
         <RouterProvider router={router} />
+        <ToastContainer />
       </BookProvider>
     </WishlistProvider>
   </StrictMode>,

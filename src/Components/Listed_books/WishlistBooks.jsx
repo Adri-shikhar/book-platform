@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router';
 import { WishlistContext } from '../../Contexts/WishlistContext';
+import { toast } from 'react-toastify';
 
 const WishlistBooks = ({ book }) => {
     const { removeFromWishlist } = useContext(WishlistContext);
@@ -76,6 +77,7 @@ const WishlistBooks = ({ book }) => {
                             onClick={(e) => {
                                 e.preventDefault();
                                 removeFromWishlist(book.bookId);
+                                toast.success('Removed from wishlist');
                             }}
                             className="ml-auto bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded font-semibold text-sm"
                         >
