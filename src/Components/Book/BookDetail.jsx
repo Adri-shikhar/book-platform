@@ -1,13 +1,17 @@
 import React from 'react';
-import { useLoaderData, Link } from 'react-router';
+import { useLoaderData } from 'react-router';
+import { useContext } from 'react';
+import { BookContext } from '../../Contexts/BookContext';
+import { WishlistContext } from '../../Contexts/WishlistContext';
 
 const BookDetail = () => {
     const book = useLoaderData();
+    const { handleRead } = useContext(BookContext);
+    const { addToWishlist } = useContext(WishlistContext);
 
     if (!book) {
         return <div className="max-w-6xl mx-auto px-6 py-12">Book not found.</div>;
     }
-
     return (
         <main className="max-w-6xl mx-auto px-6 py-12">
             <div className="bg-white rounded-lg p-8">
@@ -64,8 +68,8 @@ const BookDetail = () => {
 
                         {/* Buttons */}
                         <div className="flex gap-3">
-                            <button className="btn btn-outline btn-sm">Read</button>
-                            <button className="btn bg-cyan-400 text-white border-none btn-sm">Wishlist</button>
+                            <button className="btn btn-outline btn-sm" onClick={() => handleRead(book)}>Read</button>
+                            <button className="btn bg-cyan-400 text-white border-none btn-sm" onClick={() => addToWishlist(book)}>Wishlist</button>
                         </div>
                     </div>
                 </div>

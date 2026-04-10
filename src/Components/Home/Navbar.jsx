@@ -6,8 +6,8 @@ import Nav_bar_design from './Nav_bar_design';
 const Navbar = () => {
     return (
         <>
-        <Nav_bar_design />
-        <Outlet />
+            <Nav_bar_design />
+            <Outlet />
         </>
     );
 };

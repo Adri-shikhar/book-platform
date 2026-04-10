@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import heroImage from '../assets/hero.png';
-import User from './All_books';
-import All_books from './All_books';
+import heroImage from '../../assets/hero.png';
+import All_books from '../Book/All_books';
 
 const Hero = () => {
     return (
@@ -34,7 +33,7 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
-            <All_books></All_books>
+            <All_books />
         </div>
     );
 };

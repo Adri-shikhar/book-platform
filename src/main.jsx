@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import './index.css'
 import App from './App.jsx'
-import Navbar from './Components/Navbar.jsx';
-import Hero from './Components/Hero.jsx';
-import Listed_books from './Components/Listed_books.jsx';
+import Navbar from './Components/Home/Navbar.jsx';
+import Hero from './Components/Home/Hero.jsx';
+import Listed_books from './Components/Listed_books/Listed_books.jsx';
 import Pages_To_Reload from './Components/Pages_To_Reload.jsx';
-import Home from './Components/Home.jsx';
-import User from './Components/All_books.jsx';
-import All_books from './Components/All_books.jsx';
-import BookDetail from './Components/BookDetail.jsx';
+import All_books from './Components/Book/All_books.jsx';
+import BookDetail from './Components/Book/BookDetail.jsx';
+import BookProvider from './Contexts/BookContext.jsx';
+import WishlistProvider from './Contexts/WishlistContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,16 +21,13 @@ const router = createBrowserRouter([
         index: true,
         Component: Hero,
       },
-      {
-        path: "home",
-        Component: Home,
-      },
+
       {
         path: "All_books/:bookId",
         loader: async ({ params }) => {
           const res = await fetch("/booksData.json");
           const data = await res.json();
-          return data.find(book => book.bookId == params.bookId);
+          return data.find(book => String(book.bookId) === String(params.bookId));
         },
         Component: BookDetail,
       },
@@ -49,6 +46,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <WishlistProvider>
+      <BookProvider>
+        <RouterProvider router={router} />
+      </BookProvider>
+    </WishlistProvider>
   </StrictMode>,
 )
